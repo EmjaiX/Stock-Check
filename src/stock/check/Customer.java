@@ -15,7 +15,28 @@ class Customer {
         this.contact = contact;
     }
 
-    public Customer() {
+//    public Customer() {
+//    }
+
+    Customer(int customer) {
+        this.fname = null;
+        this.lname = null;
+        this.contact = null;
+        for(Customer c:StockCheck.Customers){
+            if(c.getId()==customer){
+                this.id = c.getId();
+                this.fname = c.getFname();
+                this.lname = c.getLname();
+                this.contact = c.getContact();
+                break;
+            }
+        }
+        if(this.fname!=null) return;
+        this.id = getLastID();
+        this.fname = "John" + this.id;    
+        this.lname = "Doe";    
+        this.contact = "0000000";    
+        update();
     }
 
     public String getContact() {
@@ -55,5 +76,13 @@ class Customer {
     @Override
     public String toString() { 
         return this.fname + " " + this.lname;
+    }
+
+    private void update() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private int getLastID() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

@@ -16,10 +16,10 @@ public class order {
     private boolean completed;
     private Date dateReceived,dateReturned;
 
-    public order(int orderNumber, double paid, Customer customer, boolean completed, String description, String item, Date dateReceived, Date dateReturned) {
+    public order(int orderNumber, double paid, int customer, boolean completed, String description, String item, Date dateReceived, Date dateReturned) {
         this.orderNumber = orderNumber;
         this.paid = paid;
-        this.customer = customer;
+        this.customer = new Customer(customer);
         this.description = description;
         this.item = item;
         this.completed = completed;
@@ -35,6 +35,7 @@ public class order {
         this.completed = false;
         this.dateReceived = dateReceived;
     }
+
 
     public Customer getCustomer() {
         return customer;

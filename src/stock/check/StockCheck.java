@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 public class StockCheck {
 
-    static ArrayList<Customer> Customers;
-    static ArrayList<order> Orders;
+    static public ArrayList<Customer> Customers;
+    static public ArrayList<order> Orders;
     public static void main(String[] args) {
         Orders = new ArrayList<>();
         Customers = new ArrayList<>();
