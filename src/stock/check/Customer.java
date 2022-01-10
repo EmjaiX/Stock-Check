@@ -5,9 +5,11 @@ package stock.check;
  * @author emjai
  */
 class Customer {
+    private int id;
     private String fname,lname,contact;
 
-    public Customer(String fname, String lname, String contact) {
+    public Customer(String fname, String lname, String contact, int id) {
+        this.id = id;
         this.fname = fname;
         this.lname = lname;
         this.contact = contact;
@@ -28,6 +30,11 @@ class Customer {
         return lname;
     }
 
+    public int getId() {
+        return id;
+    }
+
+
     public void setContact(String contact) {
         this.contact = contact;
     }
@@ -38,7 +45,12 @@ class Customer {
 
     public void setLname(String lname) {
         this.lname = lname;
+    } 
+
+    public void setId(int id) {
+        this.id = id;
     }
+
 
     @Override
     public String toString() { 
